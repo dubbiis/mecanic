@@ -1,0 +1,1006 @@
+[
+    {
+        "table_name": "appointments",
+        "fields": [
+            {
+                "name": "id",
+                "type": "bigint unsigned",
+                "null": "NO",
+                "key": "PRI",
+                "default": null,
+                "extra": "auto_increment"
+            },
+            {
+                "name": "vehicle_id",
+                "type": "bigint unsigned",
+                "null": "NO",
+                "key": "MUL",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "appointment_date",
+                "type": "datetime",
+                "null": "NO",
+                "key": "MUL",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "service_type",
+                "type": "enum('revision','reparacion','itv','diagnostico','mantenimiento','otro')",
+                "null": "NO",
+                "key": "MUL",
+                "default": "revision",
+                "extra": ""
+            },
+            {
+                "name": "status",
+                "type": "enum('pendiente','confirmada','en_proceso','completada','cancelada','no_presentado')",
+                "null": "NO",
+                "key": "MUL",
+                "default": "pendiente",
+                "extra": ""
+            },
+            {
+                "name": "description",
+                "type": "text",
+                "null": "YES",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "work_done",
+                "type": "text",
+                "null": "YES",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "estimated_cost",
+                "type": "decimal(10,2)",
+                "null": "YES",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "final_cost",
+                "type": "decimal(10,2)",
+                "null": "YES",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "estimated_duration",
+                "type": "int",
+                "null": "YES",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "notes",
+                "type": "text",
+                "null": "YES",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "created_at",
+                "type": "timestamp",
+                "null": "YES",
+                "key": "",
+                "default": "CURRENT_TIMESTAMP",
+                "extra": "DEFAULT_GENERATED"
+            },
+            {
+                "name": "updated_at",
+                "type": "timestamp",
+                "null": "YES",
+                "key": "",
+                "default": "CURRENT_TIMESTAMP",
+                "extra": "DEFAULT_GENERATED on update CURRENT_TIMESTAMP"
+            },
+            {
+                "name": "deleted_at",
+                "type": "timestamp",
+                "null": "YES",
+                "key": "MUL",
+                "default": null,
+                "extra": ""
+            }
+        ],
+        "indexes": [
+            {
+                "Table": "appointments",
+                "Non_unique": 0,
+                "Key_name": "PRIMARY",
+                "Seq_in_index": 1,
+                "Column_name": "id",
+                "Collation": "A",
+                "Cardinality": 0,
+                "Sub_part": null,
+                "Packed": null,
+                "Null": "",
+                "Index_type": "BTREE",
+                "Comment": "",
+                "Index_comment": "",
+                "Visible": "YES",
+                "Expression": null
+            },
+            {
+                "Table": "appointments",
+                "Non_unique": 1,
+                "Key_name": "idx_appointment_date",
+                "Seq_in_index": 1,
+                "Column_name": "appointment_date",
+                "Collation": "A",
+                "Cardinality": 0,
+                "Sub_part": null,
+                "Packed": null,
+                "Null": "",
+                "Index_type": "BTREE",
+                "Comment": "",
+                "Index_comment": "",
+                "Visible": "YES",
+                "Expression": null
+            },
+            {
+                "Table": "appointments",
+                "Non_unique": 1,
+                "Key_name": "idx_status",
+                "Seq_in_index": 1,
+                "Column_name": "status",
+                "Collation": "A",
+                "Cardinality": 0,
+                "Sub_part": null,
+                "Packed": null,
+                "Null": "",
+                "Index_type": "BTREE",
+                "Comment": "",
+                "Index_comment": "",
+                "Visible": "YES",
+                "Expression": null
+            },
+            {
+                "Table": "appointments",
+                "Non_unique": 1,
+                "Key_name": "idx_service_type",
+                "Seq_in_index": 1,
+                "Column_name": "service_type",
+                "Collation": "A",
+                "Cardinality": 0,
+                "Sub_part": null,
+                "Packed": null,
+                "Null": "",
+                "Index_type": "BTREE",
+                "Comment": "",
+                "Index_comment": "",
+                "Visible": "YES",
+                "Expression": null
+            },
+            {
+                "Table": "appointments",
+                "Non_unique": 1,
+                "Key_name": "idx_vehicle_appointment",
+                "Seq_in_index": 1,
+                "Column_name": "vehicle_id",
+                "Collation": "A",
+                "Cardinality": 0,
+                "Sub_part": null,
+                "Packed": null,
+                "Null": "",
+                "Index_type": "BTREE",
+                "Comment": "",
+                "Index_comment": "",
+                "Visible": "YES",
+                "Expression": null
+            },
+            {
+                "Table": "appointments",
+                "Non_unique": 1,
+                "Key_name": "idx_vehicle_appointment",
+                "Seq_in_index": 2,
+                "Column_name": "appointment_date",
+                "Collation": "A",
+                "Cardinality": 0,
+                "Sub_part": null,
+                "Packed": null,
+                "Null": "",
+                "Index_type": "BTREE",
+                "Comment": "",
+                "Index_comment": "",
+                "Visible": "YES",
+                "Expression": null
+            },
+            {
+                "Table": "appointments",
+                "Non_unique": 1,
+                "Key_name": "idx_deleted_at",
+                "Seq_in_index": 1,
+                "Column_name": "deleted_at",
+                "Collation": "A",
+                "Cardinality": 0,
+                "Sub_part": null,
+                "Packed": null,
+                "Null": "YES",
+                "Index_type": "BTREE",
+                "Comment": "",
+                "Index_comment": "",
+                "Visible": "YES",
+                "Expression": null
+            }
+        ]
+    },
+    {
+        "table_name": "cache",
+        "fields": [
+            {
+                "name": "key",
+                "type": "varchar(255)",
+                "null": "NO",
+                "key": "PRI",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "value",
+                "type": "mediumtext",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "expiration",
+                "type": "int",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            }
+        ],
+        "indexes": [
+            {
+                "Table": "cache",
+                "Non_unique": 0,
+                "Key_name": "PRIMARY",
+                "Seq_in_index": 1,
+                "Column_name": "key",
+                "Collation": "A",
+                "Cardinality": 0,
+                "Sub_part": null,
+                "Packed": null,
+                "Null": "",
+                "Index_type": "BTREE",
+                "Comment": "",
+                "Index_comment": "",
+                "Visible": "YES",
+                "Expression": null
+            }
+        ]
+    },
+    {
+        "table_name": "cache_locks",
+        "fields": [
+            {
+                "name": "key",
+                "type": "varchar(255)",
+                "null": "NO",
+                "key": "PRI",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "owner",
+                "type": "varchar(255)",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "expiration",
+                "type": "int",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            }
+        ],
+        "indexes": [
+            {
+                "Table": "cache_locks",
+                "Non_unique": 0,
+                "Key_name": "PRIMARY",
+                "Seq_in_index": 1,
+                "Column_name": "key",
+                "Collation": "A",
+                "Cardinality": 0,
+                "Sub_part": null,
+                "Packed": null,
+                "Null": "",
+                "Index_type": "BTREE",
+                "Comment": "",
+                "Index_comment": "",
+                "Visible": "YES",
+                "Expression": null
+            }
+        ]
+    },
+    {
+        "table_name": "failed_jobs",
+        "fields": [
+            {
+                "name": "id",
+                "type": "bigint unsigned",
+                "null": "NO",
+                "key": "PRI",
+                "default": null,
+                "extra": "auto_increment"
+            },
+            {
+                "name": "uuid",
+                "type": "varchar(255)",
+                "null": "NO",
+                "key": "UNI",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "connection",
+                "type": "text",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "queue",
+                "type": "text",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "payload",
+                "type": "longtext",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "exception",
+                "type": "longtext",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "failed_at",
+                "type": "timestamp",
+                "null": "NO",
+                "key": "",
+                "default": "CURRENT_TIMESTAMP",
+                "extra": "DEFAULT_GENERATED"
+            }
+        ],
+        "indexes": [
+            {
+                "Table": "failed_jobs",
+                "Non_unique": 0,
+                "Key_name": "PRIMARY",
+                "Seq_in_index": 1,
+                "Column_name": "id",
+                "Collation": "A",
+                "Cardinality": 0,
+                "Sub_part": null,
+                "Packed": null,
+                "Null": "",
+                "Index_type": "BTREE",
+                "Comment": "",
+                "Index_comment": "",
+                "Visible": "YES",
+                "Expression": null
+            },
+            {
+                "Table": "failed_jobs",
+                "Non_unique": 0,
+                "Key_name": "failed_jobs_uuid_unique",
+                "Seq_in_index": 1,
+                "Column_name": "uuid",
+                "Collation": "A",
+                "Cardinality": 0,
+                "Sub_part": null,
+                "Packed": null,
+                "Null": "",
+                "Index_type": "BTREE",
+                "Comment": "",
+                "Index_comment": "",
+                "Visible": "YES",
+                "Expression": null
+            }
+        ]
+    },
+    {
+        "table_name": "job_batches",
+        "fields": [
+            {
+                "name": "id",
+                "type": "varchar(255)",
+                "null": "NO",
+                "key": "PRI",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "name",
+                "type": "varchar(255)",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "total_jobs",
+                "type": "int",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "pending_jobs",
+                "type": "int",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "failed_jobs",
+                "type": "int",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "failed_job_ids",
+                "type": "longtext",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "options",
+                "type": "mediumtext",
+                "null": "YES",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "cancelled_at",
+                "type": "int",
+                "null": "YES",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "created_at",
+                "type": "int",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "finished_at",
+                "type": "int",
+                "null": "YES",
+                "key": "",
+                "default": null,
+                "extra": ""
+            }
+        ],
+        "indexes": [
+            {
+                "Table": "job_batches",
+                "Non_unique": 0,
+                "Key_name": "PRIMARY",
+                "Seq_in_index": 1,
+                "Column_name": "id",
+                "Collation": "A",
+                "Cardinality": 0,
+                "Sub_part": null,
+                "Packed": null,
+                "Null": "",
+                "Index_type": "BTREE",
+                "Comment": "",
+                "Index_comment": "",
+                "Visible": "YES",
+                "Expression": null
+            }
+        ]
+    },
+    {
+        "table_name": "jobs",
+        "fields": [
+            {
+                "name": "id",
+                "type": "bigint unsigned",
+                "null": "NO",
+                "key": "PRI",
+                "default": null,
+                "extra": "auto_increment"
+            },
+            {
+                "name": "queue",
+                "type": "varchar(255)",
+                "null": "NO",
+                "key": "MUL",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "payload",
+                "type": "longtext",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "attempts",
+                "type": "tinyint unsigned",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "reserved_at",
+                "type": "int unsigned",
+                "null": "YES",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "available_at",
+                "type": "int unsigned",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "created_at",
+                "type": "int unsigned",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            }
+        ],
+        "indexes": [
+            {
+                "Table": "jobs",
+                "Non_unique": 0,
+                "Key_name": "PRIMARY",
+                "Seq_in_index": 1,
+                "Column_name": "id",
+                "Collation": "A",
+                "Cardinality": 0,
+                "Sub_part": null,
+                "Packed": null,
+                "Null": "",
+                "Index_type": "BTREE",
+                "Comment": "",
+                "Index_comment": "",
+                "Visible": "YES",
+                "Expression": null
+            },
+            {
+                "Table": "jobs",
+                "Non_unique": 1,
+                "Key_name": "jobs_queue_index",
+                "Seq_in_index": 1,
+                "Column_name": "queue",
+                "Collation": "A",
+                "Cardinality": 0,
+                "Sub_part": null,
+                "Packed": null,
+                "Null": "",
+                "Index_type": "BTREE",
+                "Comment": "",
+                "Index_comment": "",
+                "Visible": "YES",
+                "Expression": null
+            }
+        ]
+    },
+    {
+        "table_name": "password_reset_tokens",
+        "fields": [
+            {
+                "name": "email",
+                "type": "varchar(255)",
+                "null": "NO",
+                "key": "PRI",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "token",
+                "type": "varchar(255)",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "created_at",
+                "type": "timestamp",
+                "null": "YES",
+                "key": "",
+                "default": null,
+                "extra": ""
+            }
+        ],
+        "indexes": [
+            {
+                "Table": "password_reset_tokens",
+                "Non_unique": 0,
+                "Key_name": "PRIMARY",
+                "Seq_in_index": 1,
+                "Column_name": "email",
+                "Collation": "A",
+                "Cardinality": 0,
+                "Sub_part": null,
+                "Packed": null,
+                "Null": "",
+                "Index_type": "BTREE",
+                "Comment": "",
+                "Index_comment": "",
+                "Visible": "YES",
+                "Expression": null
+            }
+        ]
+    },
+    {
+        "table_name": "sessions",
+        "fields": [
+            {
+                "name": "id",
+                "type": "varchar(255)",
+                "null": "NO",
+                "key": "PRI",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "user_id",
+                "type": "bigint unsigned",
+                "null": "YES",
+                "key": "MUL",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "ip_address",
+                "type": "varchar(45)",
+                "null": "YES",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "user_agent",
+                "type": "text",
+                "null": "YES",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "payload",
+                "type": "longtext",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "last_activity",
+                "type": "int",
+                "null": "NO",
+                "key": "MUL",
+                "default": null,
+                "extra": ""
+            }
+        ],
+        "indexes": [
+            {
+                "Table": "sessions",
+                "Non_unique": 0,
+                "Key_name": "PRIMARY",
+                "Seq_in_index": 1,
+                "Column_name": "id",
+                "Collation": "A",
+                "Cardinality": 5,
+                "Sub_part": null,
+                "Packed": null,
+                "Null": "",
+                "Index_type": "BTREE",
+                "Comment": "",
+                "Index_comment": "",
+                "Visible": "YES",
+                "Expression": null
+            },
+            {
+                "Table": "sessions",
+                "Non_unique": 1,
+                "Key_name": "sessions_user_id_index",
+                "Seq_in_index": 1,
+                "Column_name": "user_id",
+                "Collation": "A",
+                "Cardinality": 2,
+                "Sub_part": null,
+                "Packed": null,
+                "Null": "YES",
+                "Index_type": "BTREE",
+                "Comment": "",
+                "Index_comment": "",
+                "Visible": "YES",
+                "Expression": null
+            },
+            {
+                "Table": "sessions",
+                "Non_unique": 1,
+                "Key_name": "sessions_last_activity_index",
+                "Seq_in_index": 1,
+                "Column_name": "last_activity",
+                "Collation": "A",
+                "Cardinality": 5,
+                "Sub_part": null,
+                "Packed": null,
+                "Null": "",
+                "Index_type": "BTREE",
+                "Comment": "",
+                "Index_comment": "",
+                "Visible": "YES",
+                "Expression": null
+            }
+        ]
+    },
+    {
+        "table_name": "users",
+        "fields": [
+            {
+                "name": "id",
+                "type": "bigint unsigned",
+                "null": "NO",
+                "key": "PRI",
+                "default": null,
+                "extra": "auto_increment"
+            },
+            {
+                "name": "name",
+                "type": "varchar(255)",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "email",
+                "type": "varchar(255)",
+                "null": "NO",
+                "key": "UNI",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "email_verified_at",
+                "type": "timestamp",
+                "null": "YES",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "password",
+                "type": "varchar(255)",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "remember_token",
+                "type": "varchar(100)",
+                "null": "YES",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "created_at",
+                "type": "timestamp",
+                "null": "YES",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "updated_at",
+                "type": "timestamp",
+                "null": "YES",
+                "key": "",
+                "default": null,
+                "extra": ""
+            }
+        ],
+        "indexes": [
+            {
+                "Table": "users",
+                "Non_unique": 0,
+                "Key_name": "PRIMARY",
+                "Seq_in_index": 1,
+                "Column_name": "id",
+                "Collation": "A",
+                "Cardinality": 0,
+                "Sub_part": null,
+                "Packed": null,
+                "Null": "",
+                "Index_type": "BTREE",
+                "Comment": "",
+                "Index_comment": "",
+                "Visible": "YES",
+                "Expression": null
+            },
+            {
+                "Table": "users",
+                "Non_unique": 0,
+                "Key_name": "users_email_unique",
+                "Seq_in_index": 1,
+                "Column_name": "email",
+                "Collation": "A",
+                "Cardinality": 0,
+                "Sub_part": null,
+                "Packed": null,
+                "Null": "",
+                "Index_type": "BTREE",
+                "Comment": "",
+                "Index_comment": "",
+                "Visible": "YES",
+                "Expression": null
+            }
+        ]
+    },
+    {
+        "table_name": "vehicles",
+        "fields": [
+            {
+                "name": "id",
+                "type": "bigint unsigned",
+                "null": "NO",
+                "key": "PRI",
+                "default": null,
+                "extra": "auto_increment"
+            },
+            {
+                "name": "name",
+                "type": "varchar(255)",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "phone",
+                "type": "varchar(255)",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "car",
+                "type": "varchar(255)",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "plate",
+                "type": "varchar(255)",
+                "null": "NO",
+                "key": "UNI",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "itv_date",
+                "type": "date",
+                "null": "NO",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "notes",
+                "type": "text",
+                "null": "YES",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "created_at",
+                "type": "timestamp",
+                "null": "YES",
+                "key": "",
+                "default": null,
+                "extra": ""
+            },
+            {
+                "name": "updated_at",
+                "type": "timestamp",
+                "null": "YES",
+                "key": "",
+                "default": null,
+                "extra": ""
+            }
+        ],
+        "indexes": [
+            {
+                "Table": "vehicles",
+                "Non_unique": 0,
+                "Key_name": "PRIMARY",
+                "Seq_in_index": 1,
+                "Column_name": "id",
+                "Collation": "A",
+                "Cardinality": 3,
+                "Sub_part": null,
+                "Packed": null,
+                "Null": "",
+                "Index_type": "BTREE",
+                "Comment": "",
+                "Index_comment": "",
+                "Visible": "YES",
+                "Expression": null
+            },
+            {
+                "Table": "vehicles",
+                "Non_unique": 0,
+                "Key_name": "vehicles_plate_unique",
+                "Seq_in_index": 1,
+                "Column_name": "plate",
+                "Collation": "A",
+                "Cardinality": 3,
+                "Sub_part": null,
+                "Packed": null,
+                "Null": "",
+                "Index_type": "BTREE",
+                "Comment": "",
+                "Index_comment": "",
+                "Visible": "YES",
+                "Expression": null
+            }
+        ]
+    }
+]

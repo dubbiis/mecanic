@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(composer:*)",
+      "Bash(php:*)",
+      "Bash(choco --version:*)",
+      "Bash(powershell -Command \"Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex \\(\\(New-Object System.Net.WebClient\\).DownloadString\\(''https://community.chocolatey.org/install.ps1''\\)\\)\")",
+      "Bash(powershell -Command:*)",
+      "WebFetch(domain:windows.php.net)",
+      "Bash(export PATH=\"$PATH:/c/laragon/bin/php/php-8.4.16:/c/laragon/bin/composer\")",
+      "Bash(export PATH=\"$PATH:/c/laragon/bin/php/php-8.4.16\")",
+      "Bash(dir:*)",
+      "Bash(ls:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)"
+    ]
+  }
+}
