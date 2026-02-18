@@ -1,6 +1,6 @@
 # 🚗 Workshop CRM
 
-Sistema de gestión de vehículos e ITVs para talleres mecánicos.
+Sistema de gestión de vehículos e ITVs para talleres mecánicos. v1.0
 
 [![Laravel](https://img.shields.io/badge/Laravel-11-FF2D20?style=flat&logo=laravel)](https://laravel.com)
 [![Livewire](https://img.shields.io/badge/Livewire-4.1.4-4E56A6?style=flat&logo=livewire)](https://livewire.laravel.com)
