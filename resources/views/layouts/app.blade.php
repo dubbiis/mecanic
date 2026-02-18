@@ -27,14 +27,35 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <style>
-        body { font-family: 'Poppins', sans-serif; }
+        body { font-family: 'Poppins', sans-serif; transition: background 0.5s ease; }
         .fade-in { animation: fadeIn 0.3s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 
+    <!-- Theme Manager (must load before Alpine boots) -->
+    <script>
+        function themeManager() {
+            return {
+                themes: {
+                    blue:  'linear-gradient(135deg, #dbeafe 0%, #ede9fe 50%, #c7d2fe 100%)',
+                    green: 'linear-gradient(135deg, #d1fae5 0%, #ecfdf5 50%, #a7f3d0 100%)',
+                    pink:  'linear-gradient(135deg, #fce7f3 0%, #fdf2f8 50%, #fbcfe8 100%)',
+                },
+                activeTheme: localStorage.getItem('wcrm_theme') || 'blue',
+                get gradient() {
+                    return 'background: ' + this.themes[this.activeTheme] + '; background-attachment: fixed;';
+                },
+                setTheme(t) {
+                    this.activeTheme = t;
+                    localStorage.setItem('wcrm_theme', t);
+                }
+            }
+        }
+    </script>
+
     @livewireStyles
 </head>
-<body class="text-zinc-900 h-screen flex overflow-hidden selection:bg-violet-900 selection:text-white antialiased" style="background: linear-gradient(135deg, #dbeafe 0%, #ede9fe 50%, #c7d2fe 100%); background-attachment: fixed;">
+<body x-data="themeManager()" x-bind:style="gradient" class="text-zinc-900 h-screen flex overflow-hidden selection:bg-violet-900 selection:text-white antialiased">
 
     <!-- Sidebar (Desktop) -->
     <aside class="w-72 glass-sidebar hidden md:flex flex-col p-6">
@@ -129,6 +150,34 @@
                     </svg>
                     <span>Nuevo Cliente</span>
                 </a>
+            </div>
+
+            {{-- Theme Switcher --}}
+            <div class="mt-6">
+                <p class="px-4 text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-3">Tema</p>
+                <div class="flex items-center gap-3 px-4">
+                    <button
+                        @click="setTheme('blue')"
+                        :class="activeTheme === 'blue' ? 'ring-2 ring-offset-2 ring-blue-400 scale-110' : 'opacity-50 hover:opacity-90 hover:scale-105'"
+                        class="w-7 h-7 rounded-full transition-all duration-200 shadow-sm"
+                        style="background: linear-gradient(135deg, #60a5fa, #a78bfa)"
+                        title="Azul / Violeta">
+                    </button>
+                    <button
+                        @click="setTheme('green')"
+                        :class="activeTheme === 'green' ? 'ring-2 ring-offset-2 ring-emerald-400 scale-110' : 'opacity-50 hover:opacity-90 hover:scale-105'"
+                        class="w-7 h-7 rounded-full transition-all duration-200 shadow-sm"
+                        style="background: linear-gradient(135deg, #34d399, #22d3ee)"
+                        title="Verde / Teal">
+                    </button>
+                    <button
+                        @click="setTheme('pink')"
+                        :class="activeTheme === 'pink' ? 'ring-2 ring-offset-2 ring-pink-400 scale-110' : 'opacity-50 hover:opacity-90 hover:scale-105'"
+                        class="w-7 h-7 rounded-full transition-all duration-200 shadow-sm"
+                        style="background: linear-gradient(135deg, #f472b6, #fb923c)"
+                        title="Rosa / Naranja">
+                    </button>
+                </div>
             </div>
         </nav>
 
