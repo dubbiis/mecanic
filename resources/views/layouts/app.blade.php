@@ -13,6 +13,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Scripts -->
+    <script type="importmap">
+    {
+        "imports": {
+            "@fullcalendar/core": "https://esm.sh/@fullcalendar/core@6.1.20",
+            "@fullcalendar/daygrid": "https://esm.sh/@fullcalendar/daygrid@6.1.20",
+            "@fullcalendar/timegrid": "https://esm.sh/@fullcalendar/timegrid@6.1.20",
+            "@fullcalendar/interaction": "https://esm.sh/@fullcalendar/interaction@6.1.20",
+            "@fullcalendar/list": "https://esm.sh/@fullcalendar/list@6.1.20"
+        }
+    }
+    </script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <style>
