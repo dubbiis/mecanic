@@ -25,9 +25,13 @@ EOF
 # Permisos
 chmod -R 775 /app/storage /app/bootstrap/cache
 
-# Limpiar y cachear config
+# Limpiar config
 php artisan config:clear
 php artisan cache:clear
 
-# Iniciar servidor apuntando a public_html
+# Ejecutar migraciones y seeder del admin
+php artisan migrate --force
+php artisan db:seed --class=AdminUserSeeder --force 2>/dev/null || true
+
+# Iniciar servidor
 exec php -S 0.0.0.0:8080 -t /app/public_html /app/public_html/index.php
