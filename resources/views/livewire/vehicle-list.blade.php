@@ -90,7 +90,7 @@
                         </td>
                         <td class="p-5 text-center">
                             <a href="https://www.itvcita.com/Welcome.do" target="_blank" class="inline-block hover:opacity-80 transition-opacity" title="Pedir cita ITV">
-                                <img src="{{ asset('build/assets/logos/ITV_logo.png') }}" alt="ITV Logo" class="h-8 w-auto mx-auto">
+                                <img src="{{ asset('images/ITV_logo.png') }}" alt="ITV Logo" class="h-8 w-auto mx-auto">
                             </a>
                         </td>
                         <td class="p-5 text-right">
