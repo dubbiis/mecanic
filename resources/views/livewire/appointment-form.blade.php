@@ -10,7 +10,7 @@
 
     <form wire:submit="save" class="space-y-6">
         {{-- Tarjeta principal --}}
-        <div class="bg-white rounded-lg shadow-sm p-6 space-y-6">
+        <div class="glass-card p-6 space-y-6">
 
             {{-- Selección de Cliente y Vehículo --}}
             <div>
@@ -85,7 +85,7 @@
                             type="text"
                             wire:model.live.debounce.300ms="clientSearch"
                             placeholder="Buscar cliente por nombre o teléfono..."
-                            class="w-full rounded-md border-zinc-300 shadow-sm focus:border-zinc-500 focus:ring-zinc-500"
+                            class="w-full px-3 py-2.5 bg-white/60 border border-white/80 rounded-xl focus:ring-2 focus:ring-violet-200 focus:outline-none text-sm transition-all backdrop-blur-sm"
                             autocomplete="off"
                         >
                         @if($clientResults->isNotEmpty())
@@ -120,7 +120,7 @@
                         type="date"
                         id="appointment_date"
                         wire:model="appointment_date"
-                        class="w-full rounded-md border-zinc-300 shadow-sm focus:border-zinc-500 focus:ring-zinc-500"
+                        class="w-full px-3 py-2.5 bg-white/60 border border-white/80 rounded-xl focus:ring-2 focus:ring-violet-200 focus:outline-none text-sm transition-all backdrop-blur-sm"
                     >
                     @error('appointment_date')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -135,7 +135,7 @@
                         type="time"
                         id="appointment_time"
                         wire:model="appointment_time"
-                        class="w-full rounded-md border-zinc-300 shadow-sm focus:border-zinc-500 focus:ring-zinc-500"
+                        class="w-full px-3 py-2.5 bg-white/60 border border-white/80 rounded-xl focus:ring-2 focus:ring-violet-200 focus:outline-none text-sm transition-all backdrop-blur-sm"
                     >
                     @error('appointment_time')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -152,7 +152,7 @@
                     <select
                         id="service_type"
                         wire:model="service_type"
-                        class="w-full rounded-md border-zinc-300 shadow-sm focus:border-zinc-500 focus:ring-zinc-500"
+                        class="w-full px-3 py-2.5 bg-white/60 border border-white/80 rounded-xl focus:ring-2 focus:ring-violet-200 focus:outline-none text-sm transition-all backdrop-blur-sm"
                     >
                         @foreach($serviceTypes as $value => $label)
                             <option value="{{ $value }}">{{ $label }}</option>
@@ -170,7 +170,7 @@
                     <select
                         id="status"
                         wire:model="status"
-                        class="w-full rounded-md border-zinc-300 shadow-sm focus:border-zinc-500 focus:ring-zinc-500"
+                        class="w-full px-3 py-2.5 bg-white/60 border border-white/80 rounded-xl focus:ring-2 focus:ring-violet-200 focus:outline-none text-sm transition-all backdrop-blur-sm"
                     >
                         @foreach($statuses as $value => $label)
                             <option value="{{ $value }}">{{ $label }}</option>
@@ -192,7 +192,7 @@
                     wire:model="description"
                     rows="3"
                     placeholder="Describe el trabajo a realizar..."
-                    class="w-full rounded-md border-zinc-300 shadow-sm focus:border-zinc-500 focus:ring-zinc-500"
+                    class="w-full px-3 py-2.5 bg-white/60 border border-white/80 rounded-xl focus:ring-2 focus:ring-violet-200 focus:outline-none text-sm transition-all backdrop-blur-sm"
                 ></textarea>
                 @error('description')
                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -210,7 +210,7 @@
                     wire:model="work_done"
                     rows="3"
                     placeholder="Describe el trabajo que se realizó..."
-                    class="w-full rounded-md border-zinc-300 shadow-sm focus:border-zinc-500 focus:ring-zinc-500"
+                    class="w-full px-3 py-2.5 bg-white/60 border border-white/80 rounded-xl focus:ring-2 focus:ring-violet-200 focus:outline-none text-sm transition-all backdrop-blur-sm"
                 ></textarea>
                 @error('work_done')
                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -231,7 +231,7 @@
                         step="0.01"
                         min="0"
                         placeholder="0.00"
-                        class="w-full rounded-md border-zinc-300 shadow-sm focus:border-zinc-500 focus:ring-zinc-500"
+                        class="w-full px-3 py-2.5 bg-white/60 border border-white/80 rounded-xl focus:ring-2 focus:ring-violet-200 focus:outline-none text-sm transition-all backdrop-blur-sm"
                     >
                     @error('estimated_cost')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -249,7 +249,7 @@
                         step="0.01"
                         min="0"
                         placeholder="0.00"
-                        class="w-full rounded-md border-zinc-300 shadow-sm focus:border-zinc-500 focus:ring-zinc-500"
+                        class="w-full px-3 py-2.5 bg-white/60 border border-white/80 rounded-xl focus:ring-2 focus:ring-violet-200 focus:outline-none text-sm transition-all backdrop-blur-sm"
                     >
                     @error('final_cost')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -268,7 +268,7 @@
                     wire:model="estimated_duration"
                     min="0"
                     placeholder="60"
-                    class="w-full rounded-md border-zinc-300 shadow-sm focus:border-zinc-500 focus:ring-zinc-500"
+                    class="w-full px-3 py-2.5 bg-white/60 border border-white/80 rounded-xl focus:ring-2 focus:ring-violet-200 focus:outline-none text-sm transition-all backdrop-blur-sm"
                 >
                 @error('estimated_duration')
                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -285,7 +285,7 @@
                     wire:model="notes"
                     rows="2"
                     placeholder="Notas internas..."
-                    class="w-full rounded-md border-zinc-300 shadow-sm focus:border-zinc-500 focus:ring-zinc-500"
+                    class="w-full px-3 py-2.5 bg-white/60 border border-white/80 rounded-xl focus:ring-2 focus:ring-violet-200 focus:outline-none text-sm transition-all backdrop-blur-sm"
                 ></textarea>
                 @error('notes')
                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -298,7 +298,7 @@
             <button
                 type="button"
                 wire:click="cancel"
-                class="px-5 py-2.5 border border-zinc-300 rounded-xl shadow-sm text-sm font-medium text-zinc-700 bg-white hover:bg-zinc-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-500 transition-all"
+                class="glass-btn-secondary px-5 py-2.5 text-sm"
             >
                 Cancelar
             </button>

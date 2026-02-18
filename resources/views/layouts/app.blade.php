@@ -34,10 +34,10 @@
 
     @livewireStyles
 </head>
-<body class="bg-zinc-50 text-zinc-900 h-screen flex overflow-hidden selection:bg-zinc-900 selection:text-white antialiased">
+<body class="text-zinc-900 h-screen flex overflow-hidden selection:bg-violet-900 selection:text-white antialiased" style="background: linear-gradient(135deg, #dbeafe 0%, #ede9fe 50%, #c7d2fe 100%); background-attachment: fixed;">
 
     <!-- Sidebar (Desktop) -->
-    <aside class="w-72 bg-white border-r border-zinc-100 hidden md:flex flex-col p-6">
+    <aside class="w-72 glass-sidebar hidden md:flex flex-col p-6">
         {{-- Logo --}}
         <div class="flex items-center gap-3 mb-10 px-2">
             <div class="w-8 h-8 bg-zinc-900 rounded-lg flex items-center justify-center text-white">
@@ -58,8 +58,8 @@
                 href="{{ route('dashboard') }}"
                 @class([
                     'w-full flex items-center justify-between px-4 py-3 text-sm font-medium rounded-xl transition-all duration-200 group',
-                    'bg-zinc-900 text-white shadow-lg shadow-zinc-900/10' => request()->routeIs('dashboard'),
-                    'text-zinc-500 hover:bg-zinc-50 hover:text-zinc-900' => !request()->routeIs('dashboard')
+                    'bg-white/70 backdrop-blur-sm shadow-sm text-zinc-900' => request()->routeIs('dashboard'),
+                    'text-zinc-500 hover:bg-white/50 hover:text-zinc-900' => !request()->routeIs('dashboard')
                 ])
             >
                 <div class="flex items-center gap-3">
@@ -74,8 +74,8 @@
                 href="{{ route('clients.index') }}"
                 @class([
                     'w-full flex items-center justify-between px-4 py-3 text-sm font-medium rounded-xl transition-all duration-200 group',
-                    'bg-zinc-900 text-white shadow-lg shadow-zinc-900/10' => request()->routeIs('clients.*'),
-                    'text-zinc-500 hover:bg-zinc-50 hover:text-zinc-900' => !request()->routeIs('clients.*')
+                    'bg-white/70 backdrop-blur-sm shadow-sm text-zinc-900' => request()->routeIs('clients.*'),
+                    'text-zinc-500 hover:bg-white/50 hover:text-zinc-900' => !request()->routeIs('clients.*')
                 ])
             >
                 <div class="flex items-center gap-3">
@@ -90,8 +90,8 @@
                 href="{{ route('vehicles.index') }}"
                 @class([
                     'w-full flex items-center justify-between px-4 py-3 text-sm font-medium rounded-xl transition-all duration-200 group',
-                    'bg-zinc-900 text-white shadow-lg shadow-zinc-900/10' => request()->routeIs('vehicles.*'),
-                    'text-zinc-500 hover:bg-zinc-50 hover:text-zinc-900' => !request()->routeIs('vehicles.*')
+                    'bg-white/70 backdrop-blur-sm shadow-sm text-zinc-900' => request()->routeIs('vehicles.*'),
+                    'text-zinc-500 hover:bg-white/50 hover:text-zinc-900' => !request()->routeIs('vehicles.*')
                 ])
             >
                 <div class="flex items-center gap-3">
@@ -107,8 +107,8 @@
                 href="{{ route('appointments.index') }}"
                 @class([
                     'w-full flex items-center justify-between px-4 py-3 text-sm font-medium rounded-xl transition-all duration-200 group',
-                    'bg-zinc-900 text-white shadow-lg shadow-zinc-900/10' => request()->routeIs('appointments.*'),
-                    'text-zinc-500 hover:bg-zinc-50 hover:text-zinc-900' => !request()->routeIs('appointments.*')
+                    'bg-white/70 backdrop-blur-sm shadow-sm text-zinc-900' => request()->routeIs('appointments.*'),
+                    'text-zinc-500 hover:bg-white/50 hover:text-zinc-900' => !request()->routeIs('appointments.*')
                 ])
             >
                 <div class="flex items-center gap-3">
@@ -155,7 +155,7 @@
     </aside>
 
     <!-- Main Content -->
-    <main class="flex-1 overflow-y-auto bg-zinc-50/50">
+    <main class="flex-1 overflow-y-auto">
         <div class="max-w-[1200px] mx-auto p-8">
 
             <!-- Mobile Header -->

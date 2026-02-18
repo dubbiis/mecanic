@@ -18,7 +18,7 @@
     </div>
 
     {{-- Form --}}
-    <form wire:submit="save" class="bg-white rounded-2xl border border-zinc-100 shadow-sm p-6 space-y-5">
+    <form wire:submit="save" class="glass-card p-6 space-y-5">
 
         {{-- Name --}}
         <div>

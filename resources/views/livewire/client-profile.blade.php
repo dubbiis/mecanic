@@ -24,7 +24,7 @@
     </div>
 
     {{-- Client Info Card --}}
-    <div class="bg-white rounded-2xl border border-zinc-100 shadow-sm p-6">
+    <div class="glass-card p-6">
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
             <div>
                 <p class="text-xs text-zinc-400 font-medium uppercase tracking-wider mb-1">Teléfono</p>
@@ -77,7 +77,7 @@
         </div>
 
         @forelse($this->client->vehicles as $vehicle)
-            <div class="bg-white rounded-2xl border border-zinc-100 shadow-sm p-4 flex items-center justify-between gap-4">
+            <div class="glass-card p-4 flex items-center justify-between gap-4">
                 <div class="flex items-center gap-4">
                     <div class="w-10 h-10 bg-zinc-100 rounded-xl flex items-center justify-center text-zinc-500 shrink-0">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -132,7 +132,7 @@
                 </div>
             </div>
         @empty
-            <div class="bg-white rounded-2xl border border-zinc-100 border-dashed p-8 text-center text-zinc-400">
+            <div class="glass-panel border-dashed p-8 text-center text-zinc-400">
                 <svg class="w-8 h-8 mx-auto mb-2 text-zinc-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path>
                 </svg>
@@ -154,14 +154,14 @@
         </h3>
 
         @if($this->appointments->isEmpty())
-            <div class="bg-white rounded-2xl border border-zinc-100 border-dashed p-8 text-center text-zinc-400">
+            <div class="glass-panel border-dashed p-8 text-center text-zinc-400">
                 <svg class="w-8 h-8 mx-auto mb-2 text-zinc-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                 </svg>
                 <p class="text-sm">No hay citas en el historial.</p>
             </div>
         @else
-            <div class="bg-white rounded-2xl border border-zinc-100 shadow-sm overflow-hidden overflow-x-auto">
+            <div class="glass-card overflow-hidden overflow-x-auto">
                 <table class="w-full text-left text-sm text-zinc-600">
                     <thead class="bg-zinc-50/50 text-zinc-400 font-medium text-xs uppercase tracking-wider border-b border-zinc-100">
                         <tr>

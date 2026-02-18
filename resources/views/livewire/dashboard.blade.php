@@ -5,14 +5,14 @@
             <h2 class="text-3xl font-bold tracking-tight text-zinc-900">Resumen General</h2>
             <p class="text-zinc-500 mt-1">Estado actual del taller.</p>
         </div>
-        <span class="px-3 py-1 bg-white border border-zinc-200 rounded-full text-xs font-medium text-zinc-600 shadow-sm">
+        <span class="px-3 py-1 glass-panel rounded-full text-xs font-medium text-zinc-600">
             {{ now()->format('d/m/Y') }}
         </span>
     </div>
 
     {{-- Statistics Cards --}}
     <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <div class="bg-white rounded-2xl border border-zinc-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] p-5 flex items-center justify-between">
+        <div class="glass-card p-5 flex items-center justify-between">
             <div>
                 <p class="text-zinc-500 text-xs font-medium uppercase tracking-wider mb-1">Total Vehículos</p>
                 <h3 class="text-3xl font-bold text-zinc-900 tracking-tight">{{ $this->totalVehicles }}</h3>
@@ -24,7 +24,7 @@
             </div>
         </div>
 
-        <div class="bg-white rounded-2xl border border-zinc-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] p-5 flex items-center justify-between">
+        <div class="glass-card p-5 flex items-center justify-between">
             <div>
                 <p class="text-zinc-500 text-xs font-medium uppercase tracking-wider mb-1">ITV Caducadas</p>
                 <h3 class="text-3xl font-bold text-zinc-900 tracking-tight">{{ $this->expiredCount }}</h3>
@@ -36,7 +36,7 @@
             </div>
         </div>
 
-        <div class="bg-white rounded-2xl border border-zinc-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] p-5 flex items-center justify-between">
+        <div class="glass-card p-5 flex items-center justify-between">
             <div>
                 <p class="text-zinc-500 text-xs font-medium uppercase tracking-wider mb-1">Próx. Vencimiento</p>
                 <h3 class="text-3xl font-bold text-zinc-900 tracking-tight">{{ $this->warningCount }}</h3>
@@ -48,7 +48,7 @@
             </div>
         </div>
 
-        <div class="bg-white rounded-2xl border border-zinc-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] p-5 flex items-center justify-between">
+        <div class="glass-card p-5 flex items-center justify-between">
             <div>
                 <p class="text-zinc-500 text-xs font-medium uppercase tracking-wider mb-1">En Regla</p>
                 <h3 class="text-3xl font-bold text-zinc-900 tracking-tight">{{ $this->validCount }}</h3>
@@ -65,7 +65,7 @@
     <div class="grid gap-6" style="grid-template-columns: repeat(2, minmax(0, 1fr))">
 
         {{-- Citas de Hoy — estilo Google Calendar día --}}
-        <div class="bg-white rounded-2xl border border-zinc-100 shadow-sm overflow-hidden flex flex-col">
+        <div class="glass-card overflow-hidden flex flex-col">
 
             {{-- Header --}}
             <div class="px-5 py-4 border-b border-zinc-100 flex items-center justify-between shrink-0">
@@ -222,7 +222,7 @@
         </div>
 
         {{-- Citas de Mañana --}}
-        <div class="bg-white rounded-2xl border border-zinc-100 shadow-sm overflow-hidden flex flex-col">
+        <div class="glass-card overflow-hidden flex flex-col">
 
             {{-- Header --}}
             <div class="px-5 py-4 border-b border-zinc-100 flex items-center justify-between shrink-0">
@@ -454,7 +454,7 @@
     </div>
 
     {{-- Calendario del Mes --}}
-    <div class="bg-white rounded-2xl border border-zinc-100 shadow-sm p-6">
+    <div class="glass-card p-6">
         <div class="flex items-center justify-between mb-4">
             <div class="flex items-center gap-2">
                 <div class="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center">
@@ -486,7 +486,7 @@
                 <div class="w-2 h-2 rounded-full bg-red-500"></div>
                 ITV Caducadas
             </h3>
-            <div class="bg-white rounded-2xl border border-zinc-100 shadow-sm overflow-hidden min-h-[300px]">
+            <div class="glass-card overflow-hidden min-h-[300px]">
                 @forelse($this->expiredVehicles as $vehicle)
                     <div wire:key="expired-{{ $vehicle->id }}" class="p-4 hover:bg-zinc-50 transition-colors flex items-center justify-between group border-b border-zinc-50 last:border-0">
                         <div class="flex items-center gap-4">
@@ -515,7 +515,7 @@
                 <div class="w-2 h-2 rounded-full bg-amber-500"></div>
                 Próximos 30 Días
             </h3>
-            <div class="bg-white rounded-2xl border border-zinc-100 shadow-sm overflow-hidden min-h-[300px]">
+            <div class="glass-card overflow-hidden min-h-[300px]">
                 @forelse($this->warningVehicles as $vehicle)
                     <div wire:key="warning-{{ $vehicle->id }}" class="p-4 hover:bg-zinc-50 transition-colors flex items-center justify-between border-b border-zinc-50 last:border-0">
                         <div>

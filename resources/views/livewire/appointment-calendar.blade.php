@@ -6,7 +6,7 @@
             <p class="mt-1 text-sm text-zinc-600">Gestiona las citas y servicios del taller</p>
         </div>
         <div class="flex gap-2">
-            <button wire:click="showHistory" class="inline-flex items-center px-5 py-2.5 bg-white border border-zinc-300 rounded-xl font-semibold text-sm text-zinc-700 hover:bg-zinc-50 focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:ring-offset-2 transition ease-in-out duration-150">
+            <button wire:click="showHistory" class="inline-flex items-center px-5 py-2.5 glass-btn-secondary font-semibold text-sm focus:outline-none transition ease-in-out duration-150">
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                 </svg>
@@ -22,7 +22,7 @@
     </div>
 
     {{-- Filtros --}}
-    <div class="bg-white rounded-lg shadow p-6">
+    <div class="glass-card p-6">
         <div class="flex items-center justify-between mb-4">
             <h3 class="text-lg font-medium text-zinc-900">Filtros</h3>
             @if($filterStatus || $filterServiceType)
@@ -35,7 +35,7 @@
             {{-- Filtro por estado --}}
             <div>
                 <label for="filterStatus" class="block text-sm font-medium text-zinc-700 mb-2">Estado</label>
-                <select wire:model.live="filterStatus" id="filterStatus" class="w-full rounded-md border-zinc-300 shadow-sm focus:border-zinc-500 focus:ring-zinc-500">
+                <select wire:model.live="filterStatus" id="filterStatus" class="w-full px-3 py-2.5 bg-white/60 border border-white/80 rounded-xl focus:ring-2 focus:ring-violet-200 focus:outline-none text-sm transition-all backdrop-blur-sm">
                     <option value="">Todos los estados</option>
                     @foreach($statuses as $value => $label)
                         <option value="{{ $value }}">{{ $label }}</option>
@@ -46,7 +46,7 @@
             {{-- Filtro por tipo de servicio --}}
             <div>
                 <label for="filterServiceType" class="block text-sm font-medium text-zinc-700 mb-2">Tipo de Servicio</label>
-                <select wire:model.live="filterServiceType" id="filterServiceType" class="w-full rounded-md border-zinc-300 shadow-sm focus:border-zinc-500 focus:ring-zinc-500">
+                <select wire:model.live="filterServiceType" id="filterServiceType" class="w-full px-3 py-2.5 bg-white/60 border border-white/80 rounded-xl focus:ring-2 focus:ring-violet-200 focus:outline-none text-sm transition-all backdrop-blur-sm">
                     <option value="">Todos los servicios</option>
                     @foreach($serviceTypes as $value => $label)
                         <option value="{{ $value }}">{{ $label }}</option>
@@ -100,7 +100,7 @@
     @endif
 
     {{-- Calendario --}}
-    <div class="bg-white rounded-lg shadow p-6" wire:ignore>
+    <div class="glass-card p-6" wire:ignore>
         <div id="calendar"></div>
     </div>
 
@@ -145,7 +145,7 @@
             <div class="flex items-center justify-center min-h-screen p-6 md:p-12">
                 <div class="fixed inset-0 bg-zinc-900 bg-opacity-50 transition-opacity backdrop-blur-sm" aria-hidden="true" wire:click="closeHistory"></div>
 
-                <div class="relative bg-white rounded-2xl shadow-2xl transform transition-all w-full max-w-6xl max-h-[90vh] flex flex-col">
+                <div class="relative glass-card transform transition-all w-full max-w-6xl max-h-[90vh] flex flex-col">
                     {{-- Header --}}
                     <div class="flex items-center justify-between px-12 py-8 border-b border-zinc-200">
                         <div>

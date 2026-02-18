@@ -17,7 +17,7 @@
     </div>
 
     {{-- Search Bar --}}
-    <div class="bg-white p-4 rounded-2xl border border-zinc-100 shadow-sm">
+    <div class="glass-card p-4">
         <div class="relative w-full">
             <svg class="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
@@ -37,7 +37,7 @@
     </div>
 
     {{-- Clients Table --}}
-    <div wire:loading.remove class="bg-white rounded-2xl border border-zinc-100 shadow-sm overflow-hidden overflow-x-auto">
+    <div wire:loading.remove class="glass-card overflow-hidden overflow-x-auto">
         <table class="w-full text-left text-sm text-zinc-600">
             <thead class="bg-zinc-50/50 text-zinc-400 font-medium text-xs uppercase tracking-wider border-b border-zinc-100">
                 <tr>
@@ -139,7 +139,7 @@
             x-transition:enter-start="opacity-0 scale-95"
             x-transition:enter-end="opacity-100 scale-100"
             @click.outside="$dispatch('cancel-delete')"
-            class="bg-white rounded-2xl shadow-xl border border-zinc-100 p-6 max-w-sm w-full mx-4">
+            class="glass-card p-6 max-w-sm w-full mx-4">
             <h3 class="font-semibold text-zinc-900 text-lg">Eliminar cliente</h3>
             <p class="text-sm text-zinc-500 mt-2">Esta acción eliminará el cliente permanentemente. Sus vehículos quedarán sin propietario asignado.</p>
             <div class="flex gap-3 mt-6 justify-end">

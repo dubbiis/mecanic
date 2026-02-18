@@ -15,7 +15,7 @@
     </div>
 
     {{-- Form --}}
-    <div class="bg-white rounded-2xl border border-zinc-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] p-6">
+    <div class="glass-card p-6">
         <form wire:submit="save" class="space-y-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
 
