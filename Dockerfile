@@ -16,27 +16,23 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /app
 
-# Copy and install dependencies
 COPY composer.json composer.lock ./
 RUN composer install --no-dev --optimize-autoloader --no-scripts
 
 COPY package.json package-lock.json ./
 RUN npm install
 
-# Copy full app
 COPY . .
 
 RUN composer dump-autoload --optimize
 
-# Build frontend assets (outputs to public_html/build)
 RUN npm run build
 
-# public_html is the web root for this project
-RUN ln -sf /app/public_html /app/public
-
-# Permissions
 RUN chmod -R 775 storage bootstrap/cache
+
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
 
 EXPOSE 8080
 
-CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8080"]
+CMD ["/start.sh"]
